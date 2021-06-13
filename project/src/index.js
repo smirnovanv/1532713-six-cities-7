@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
+import {offers} from './mocks/offers';
+//import {reviews} from './mocks/reviews';
 
+/*
 const apartments = [
   {
     title: 'Beautiful & luxurious apartment at great location',
@@ -35,9 +38,10 @@ const apartments = [
     id: 14,
   },
 ];
+*/
 
 ReactDOM.render(
   <React.StrictMode>
-    <App apartments = {apartments}/>
+    <App apartments = {offers}/>
   </React.StrictMode>,
   document.getElementById('root'));

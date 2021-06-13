@@ -7,6 +7,7 @@ import Offer from '../offer/offer';
 import NotFound from '../not-found/not-found';
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import {AppRoute} from '../../const';
+import OfferProp from '../offer/offer.prop';
 
 function App(props) {
   const {apartments} = props;
@@ -34,7 +35,9 @@ function App(props) {
 }
 
 App.propTypes = {
-  apartments: PropTypes.array.isRequired,
+  apartments: PropTypes.arrayOf(
+    PropTypes.oneOfType([OfferProp]).isRequired,
+  ),
 };
 
 export default App;

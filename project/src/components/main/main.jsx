@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function Main(props) {
   const {apartments} = props;
-  const apartmentsList = apartments.map((apartment) => <Card key={apartment.id} title={apartment.title} price={apartment.price} type={apartment.type} preview={apartment.preview} />);
+  const apartmentsList = apartments.map((apartment) => <Card key={apartment.id} title={apartment.title} price={apartment.price} type={apartment.type} preview={apartment.previewImage} />);
 
   return (
     <div className="page page--gray page--main">
