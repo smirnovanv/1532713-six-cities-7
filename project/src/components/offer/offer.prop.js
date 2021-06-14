@@ -15,11 +15,11 @@ export default PropTypes.shape({
     avatarUrl: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     isPro: PropTypes.bool.isRequired,
-    name: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
   }).isRequired,
   id: PropTypes.number.isRequired,
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  isFavourite: PropTypes.bool.isRequired,
+  isFavorite: PropTypes.bool.isRequired,
   isPremium: PropTypes.bool.isRequired,
   location: PropTypes.shape({
     latitude: PropTypes.number.isRequired,

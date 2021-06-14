@@ -14,17 +14,17 @@ function App(props) {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path={AppRoute.OFFER}>
+          <Offer apartments={apartments}/>
+        </Route>
         <Route exact path={AppRoute.ROOT}>
-          <Main apartments={apartments}/>
+          <Main apartments={apartments} />
         </Route>
         <Route exact path={AppRoute.LOGIN}>
           <Login />
         </Route>
         <Route exact path={AppRoute.FAVORITES}>
-          <Favorites />
-        </Route>
-        <Route exact path={AppRoute.OFFER}>
-          <Offer />
+          <Favorites apartments={apartments} />
         </Route>
         <Route>
           <NotFound />
@@ -36,7 +36,7 @@ function App(props) {
 
 App.propTypes = {
   apartments: PropTypes.arrayOf(
-    PropTypes.oneOfType([OfferProp]).isRequired,
+    OfferProp,
   ),
 };
 

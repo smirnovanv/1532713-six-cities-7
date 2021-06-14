@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../header/header';
-import Card from '../card/card';
+import OffersList from '../offers-list/offers-list';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 function Main(props) {
-  const {apartments} = props;
-  const apartmentsList = apartments.map((apartment) => <Card key={apartment.id} title={apartment.title} price={apartment.price} type={apartment.type} preview={apartment.previewImage} />);
+  const { apartments } = props;
+  const history = useHistory();
+
+  const [activeCard, setActiveCard] = useState();
+
+  const getActiveCardId = (id) => {
+    setActiveCard(id);
+  };
+
+  const goViaLink = (id) => {
+    history.push(`offer/${id}`);
+  };
+
+  console.log(activeCard);
 
   return (
     <div className="page page--gray page--main">
@@ -68,9 +81,7 @@ function Main(props) {
                   <li className="places__option" tabIndex="0">Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {apartmentsList}
-              </div>
+              <OffersList apartments={apartments} getActiveCardId={getActiveCardId} goViaLink={goViaLink} />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
