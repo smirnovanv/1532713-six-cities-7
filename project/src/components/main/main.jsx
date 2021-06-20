@@ -3,6 +3,7 @@ import Header from '../header/header';
 import OffersList from '../offers-list/offers-list';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import Map from '../map/map';
 
 function Main(props) {
   const { apartments } = props;
@@ -84,7 +85,9 @@ function Main(props) {
               <OffersList apartments={apartments} getActiveCardId={getActiveCardId} goViaLink={goViaLink} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map apartments={apartments} />
+              </section>
             </div>
           </div>
         </div>
