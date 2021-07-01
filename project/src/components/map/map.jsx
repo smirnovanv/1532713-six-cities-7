@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import OfferProp from '../offer/offer.prop';
-import useMap from './useMap';
+import useMap from './use-map';
 import leaflet from 'leaflet';
 
 const city = {
@@ -15,7 +15,6 @@ const URL_MARKER_DEFAULT = 'img/pin.svg';
 
 function Map(props) {
   const { apartments } = props;
-  console.log(apartments[0]);
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
 

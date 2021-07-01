@@ -19,8 +19,6 @@ function Main(props) {
     history.push(`offer/${id}`);
   };
 
-  console.log(activeCard);
-
   return (
     <div className="page page--gray page--main">
       <Header />
